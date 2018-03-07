@@ -19,6 +19,7 @@ function task1()
     include 'order_blank.php';
 }
 
+
 //###############################################################################
 //###############################################################################
 
@@ -118,5 +119,46 @@ function task3()
     echo '<br><br>';
 }
 
+
 //###############################################################################
 //###############################################################################
+
+// рекурсивная функция поиска элемента по ключу в многомерном массиве
+function find_value($arr, $key)
+{
+    foreach ($arr as $k => $v) {
+        if ($k === $key) {
+            return $v; // нашли - выходим из рекурсии
+        } else {
+            if (is_array($v)) {
+                return find_value($v, $key);
+            }
+        }
+    }
+    return null; // не нашли
+}
+
+
+function task4()
+{
+    // Получаем json по ссылке
+    $link = "https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json";
+    $json = file_get_contents($link);
+
+    // Декодируем json в массив
+    $data = json_decode($json, true);
+
+    echo '<br>';
+
+    // Ищем в массиве значение по ключу 'title'
+    $title = find_value($data, 'title');
+    if (!empty($title)) {
+        echo 'title = ' . $title . '<br>';
+    }
+
+    // Ищем в массиве значение по ключу 'pageid'
+    $pageid = find_value($data, 'pageid');
+    if (!empty($pageid)) {
+        echo 'pageid = ' . $pageid . '<br>';
+    }
+}
