@@ -31,6 +31,7 @@
         }
         .order-items {
             border-bottom-width: 2px;
+            margin-bottom: 30px;
         }
         .order-field p {
             padding:0;
