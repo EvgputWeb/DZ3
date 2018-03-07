@@ -11,13 +11,7 @@ function task1()
     if ($xml === false) {
         return null;
     }
-    // Всё нормально, xml распарсился
-
-    echo $xml->attributes()->PurchaseOrderNumber->__toString() . '<br>';
-    echo $xml->attributes()->OrderDate->__toString() . '<br>';
-
-    echo $xml->Address->attributes()->Type->__toString() . '<br>';
-    echo $xml->Address->Name->__toString() . '<br>';
-
-
+    // Сюда попали - значит xml распарсился
+    // Подключаем...
+    include 'order_blank.php';
 }
