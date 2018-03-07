@@ -7,3 +7,7 @@ require 'functions.php';
 
 // ЗАДАНИЕ 1
 task1();
+
+
+// ЗАДАНИЕ 2
+task2();

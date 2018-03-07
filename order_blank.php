@@ -24,13 +24,13 @@
             font-family: "Verdana", sans-serif;
             font-size: 15px;
         }
-        .order-field:last-child {
-            border-bottom-width: 2px;
-        }
         .order-header {
             border: 2px solid black;
             background-color: #e6e6fa;
             font-size: 16px;
+        }
+        .order-items {
+            border-bottom-width: 2px;
         }
         .order-field p {
             padding:0;
@@ -87,7 +87,6 @@
             padding: 7px 0 5px 0;
             font-weight: bold;
             color: darkgreen;
-
         }
     </style>
 
@@ -131,7 +130,7 @@
     </div>
     <?php endif; ?>
 
-    <div class="order-field">
+    <div class="order-field order-items">
         <p class="field-title">
             Items
         </p>
@@ -173,7 +172,6 @@
             </tfoot>
         </table>
     </div>
-
 
 </body>
 </html>
